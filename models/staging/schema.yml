@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_event_logs
+    description: "Cleaned and transformed user event logs from raw JSON"
+    columns:
+      - name: user_id
+        description: "Unique identifier for each user"
+        tests:
+          - not_null
+
+      - name: event_type_cleaned
+        description: "Standardized event type like click, search"
+        tests:
+          - accepted_values:
+              values: ['click', 'search']
+
+      - name: event_timestamp
+        description: "Timestamp of the event"
+        tests:
+          - not_null
+
+      - name: os
+        description: "Operating system from device_info JSON"
+      - name: os_version
+        description: "OS version"
+      - name: country
+        description: "User's country"
+      - name: city
+        description: "User's city"
+      - name: product_id
+        description: "Product ID from event_props"
+      - name: page_url
+        description: "Page URL from event_props"
+      - name: search_term
+        description: "Search term from event_props"
