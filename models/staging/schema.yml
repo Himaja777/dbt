@@ -13,7 +13,7 @@ models:
         description: "Standardized event type like click, search"
         tests:
           - accepted_values:
-              values: ['click', 'search']
+              values: ["click", "search"]
 
       - name: event_timestamp
         description: "Timestamp of the event"
